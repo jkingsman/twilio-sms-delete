@@ -29,3 +29,7 @@ npm install
 ```
 
 The script will then loop through all SMS it can see using the Twilio API, deleting each message's media (if it has any), then deleting the message itself
+
+## License
+
+Licensed under the MIT License.
