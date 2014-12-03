@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 var program =   require('commander');
 var assert =    require('assert');
 
@@ -7,14 +8,11 @@ program
     .option('--auth <authtoken>',   'Your Twilio API Auth Token')
     .parse(process.argv);
 
-
 assert.ok(program.sid, "SID is required")
 assert.ok(program.auth, "Auth Token is required")
 
-
 //build our client
 var client = require('twilio')(program.sid, program.auth);
-
 
 client.messages.list({}, function(err, data) {
     if (err) {
