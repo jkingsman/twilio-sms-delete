@@ -1,0 +1,27 @@
+{
+  "name": "twilio-sms-delete",
+  "version": "0.0.1",
+  "description": "A handy command line utility to iteratively delete Twilio records of SMS and MMS",
+  "main": "twilio-sms-delete.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "twilio": "1.9.0",
+    "commander": "2.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jkingsman/twilio-sms-delete.git"
+  },
+  "keywords": [
+    "twilio",
+    "sms",
+    "delete",
+    "api"
+  ],
+  "author": "Jack Kingsman <jack.kingsman@gmail.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "313a9c8bab5077e35089d452a07cb2ab58db9bd7"
+}
