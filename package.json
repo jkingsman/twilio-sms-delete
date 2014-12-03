@@ -2,7 +2,7 @@
   "name": "twilio-sms-delete",
   "version": "0.0.1",
   "description": "A handy command line utility to iteratively delete Twilio records of SMS and MMS",
-  "main": "twilio-sms-delete.js",
+  "main": "twilio-sms-delete",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
