@@ -28,7 +28,9 @@ npm install
 ./twilio-sms-delete --sid [your Twilio SID] --auth [your Twilio Auth Token]
 ```
 
-The script will then loop through all SMS it can see using the Twilio API, deleting each message's media (if it has any), then deleting the message itself
+The script will then loop through all SMS it can see using the Twilio API, deleting each message's media (if it has any), then deleting the message itself.
+
+**Note:** this will not delete media items that have already had their parent message deleted -- as far as I know, there's no way to find and/or delete orphaned media (and as such, it remains publically accesible forever...). This only deletes media that have an SMS to find them by.
 
 ## License
 
