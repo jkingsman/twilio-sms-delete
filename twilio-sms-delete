@@ -8,8 +8,7 @@
 var program =   require('commander');
 var assert =    require('assert');
 
-//used to track which page of the message list we're on
-var currPage;
+var currPage; //tracks which page of the message list we're on
 
 //command line options
 program
@@ -41,29 +40,6 @@ client.messages.list({}, function (err, data) {
                 else{
                     //get a list of messages for the page (currPage)
                     data.messages.forEach(function (message) {
-                        console.log("Message " + message.sid + " has " + message.num_media + " peices of media");
-                        if (message.num_media != 0) {
-                            //this message has media; retrive it
-                            client.messages(message.sid).media.list(function (err, data) {
-                                if (err) {
-                                    console.log("Media list error: " + err);
-                                }
-                                else{
-                                    //pull each peice of media from the message
-                                    data.media_list.forEach(function (media) {
-                                        //delete each peice of media
-                                        client.messages(media.parent_sid).media(media.sid).delete(function (err, data) {
-                                            if (err) {
-                                                console.log("Media deletion error: " + err.status + " -- " + err.message);
-                                            } else {
-                                                console.log("Deleted Media SID " + media.sid + " successfully.");
-                                            }
-                                        });
-                                    });
-                                }
-                            });
-                        }
-        
                         //delete the message itself
                         client.messages(message.sid).delete(function (err, data) {
                             if (err) {

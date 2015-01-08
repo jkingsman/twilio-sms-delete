@@ -1,9 +1,9 @@
 # twilio-sms-delete
 
-
 A node.js utility to iteratively delete Twilio records of SMS and MMS.
 
 ```bash
+./twilio-media-delete --sid [your Twilio SID] --auth [your Twilio Auth Token]
 ./twilio-sms-delete --sid [your Twilio SID] --auth [your Twilio Auth Token]
 ```
 
@@ -25,10 +25,13 @@ npm install
 ## Usage
 
 ```bash
+./twilio-media-delete --sid [your Twilio SID] --auth [your Twilio Auth Token]
 ./twilio-sms-delete --sid [your Twilio SID] --auth [your Twilio Auth Token]
 ```
 
-The script will then loop through all SMS it can see using the Twilio API, deleting each message's media (if it has any), then deleting the message itself.
+The `twilio-media-delete` script will then loop through all SMS it can see using the Twilio API, deleting each message's media (if it has any).
+
+The `twilio-sms-delete` will then delete the messages themselves (these scripts are separated to both solve race condition issues as well as make it easier for people that only want to remove media xor texts.
 
 **Note:** this will not delete media items that have already had their parent message deleted -- as far as I know, there's no way to find and/or delete orphaned media (and as such, it remains publically accesible forever...). This only deletes media that have an SMS to find them by.
 
