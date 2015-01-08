@@ -33,6 +33,8 @@ The `twilio-media-delete` script will then loop through all SMS it can see using
 
 The `twilio-sms-delete` will then delete the messages themselves (these scripts are separated to both solve race condition issues as well as make it easier for people that only want to remove media xor texts.
 
+### Take care the order that you run these in; you must run the media deletion script **before** the SMS deletion script. If you delete the messages before the media, the media will irrevocably be out there on the web.
+
 **Note:** this will not delete media items that have already had their parent message deleted -- as far as I know, there's no way to find and/or delete orphaned media (and as such, it remains publically accesible forever...). This only deletes media that have an SMS to find them by.
 
 ## License
