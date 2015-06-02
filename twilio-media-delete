@@ -69,3 +69,5 @@ client.messages.list({}, function (err, data) {
         }
     }
 });
+
+console.log("Deletion complete.");
