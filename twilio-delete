@@ -32,6 +32,7 @@ client.messages.list({
     console.log("This usually means your credentials are bad.");
     process.exit(1);
   } else {
+    console.log(data.messages.length + " messages to delete");
     data.messages.forEach(function(message) {
       client.messages(message.sid).media.list(function(err, data) {
         if (data && data.media_list.length > 0) {
